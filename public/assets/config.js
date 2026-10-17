@@ -2,7 +2,7 @@
 window.NSTM = {
   // Link płatności ze Stripe (Payment Link), np. "https://buy.stripe.com/xxxx".
   // Dopóki jest pusty, przyciski przewijają do sekcji z ofertą.
-  paymentLink: "",
+  paymentLink: "https://buy.stripe.com/cNi28t513flj6eMfIWdby00",
 
   // ID piksela TikToka (np. "CXXXXXXXXXXXXXXX"). Pusty = brak piksela i brak banera cookies.
   tiktokPixel: "",
