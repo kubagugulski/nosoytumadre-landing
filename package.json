@@ -1,0 +1,6 @@
+{
+  "name": "nosoytumadre",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=20" }
+}

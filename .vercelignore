@@ -1,0 +1,4 @@
+_legal
+.env*
+!.env.example
+README.md

@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>¡Gracias! · No soy tu madre</title>
+<meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="referrer" content="no-referrer">
+<link rel="icon" href="/assets/favicon.ico">
+<link rel="stylesheet" href="/assets/style.css">
+<script src="/assets/config.js"></script>
+<style>
+  body{background:radial-gradient(900px 500px at 80% -10%,#FFD2E6 0,transparent 60%),var(--cream)}
+  .ty{max-width:560px;margin:0 auto;padding:40px 20px 60px;text-align:center}
+  .ty .cover{width:170px;margin:10px auto 26px}
+  .ty h1{font-size:clamp(30px,7vw,42px);font-weight:800;margin-bottom:12px}
+  .ty h1 em{color:var(--hot)}
+  .ty .lead{font-size:18px;color:var(--ink2);margin-bottom:26px}
+  .steps-ty{text-align:left;background:#fff;border:1px solid var(--line);border-radius:22px;padding:20px 22px;margin:30px 0 0}
+  .steps-ty h3{font-size:17px;margin-bottom:10px}
+  .steps-ty ol{margin:0;padding-left:20px}
+  .steps-ty li{margin-bottom:8px;font-size:15.5px;color:#3e2b35}
+  .hint{font-size:14px;color:var(--ink2);margin-top:14px}
+  .err{display:none;background:#FFF0F6;border:1px solid var(--pink2);border-radius:16px;padding:14px;font-size:15px;margin-top:16px}
+</style>
+</head>
+<body data-event="CompletePayment">
+<main class="ty">
+  <div class="brand" style="justify-content:center"><span class="h" style="color:var(--hot)">♥</span>&nbsp;no soy <b>&nbsp;tu madre</b></div>
+  <div class="cover"><img src="/assets/portada.webp" width="170" height="241" alt="Ebook No soy tu madre"></div>
+  <h1>¡Gracias! <em>Tu plan ya es tuyo.</em></h1>
+  <p class="lead">Acabas de dar el primer paso para dejar de ser su madre. Descarga tu ebook aquí abajo. También te lo hemos enviado por email.</p>
+
+  <a class="btn full" id="dl" href="#">Descargar mi ebook (PDF) ↓</a>
+  <p class="hint" id="hint">Si estás dentro de TikTok o Instagram y no se descarga, pulsa ⋯ y elige «Abrir en el navegador».</p>
+  <div class="err" id="err">No encontramos tu compra en este enlace. No te preocupes: revisa tu email (y la carpeta de spam), te hemos enviado el enlace de descarga. Si no lo encuentras, escríbenos a <a href="mailto:nosoytumadre.es@gmail.com">nosoytumadre.es@gmail.com</a> y te lo enviamos a mano.</div>
+
+  <div class="steps-ty">
+    <h3>Cómo empezar hoy mismo</h3>
+    <ol>
+      <li>Lee el libro entero esta semana (se lee en una tarde).</li>
+      <li>Haz el test del capítulo 1 y apunta tu resultado.</li>
+      <li>Mañana empieza el <strong>día 1 del detox</strong>: solo tienes que contar, no cambiar nada.</li>
+    </ol>
+  </div>
+  <p class="hint" style="margin-top:26px">¿Dudas o problemas con la descarga? Escríbenos a <a href="mailto:nosoytumadre.es@gmail.com">nosoytumadre.es@gmail.com</a>.</p>
+</main>
+
+<div class="cookie" id="cookie" role="dialog" aria-label="Cookies">
+  <p>Usamos cookies de medición (TikTok) para saber qué contenidos te traen hasta aquí. Solo se activan si aceptas. <a href="/cookies">Más info</a></p>
+  <div class="row"><button id="ckNo">Rechazar</button><button class="acc" id="ckYes">Aceptar</button></div>
+</div>
+<script>
+(function(){
+  var p = new URLSearchParams(location.search), sid = p.get("session_id");
+  var dl = document.getElementById("dl");
+  if (sid && /^cs_[A-Za-z0-9_]+$/.test(sid)) {
+    dl.href = "/api/download?session_id=" + encodeURIComponent(sid);
+  } else {
+    dl.style.display = "none";
+    document.getElementById("hint").style.display = "none";
+    document.getElementById("err").style.display = "block";
+  }
+})();
+</script>
+<script src="/assets/app.js"></script>
+</body>
+</html>
