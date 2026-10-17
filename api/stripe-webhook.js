@@ -21,7 +21,7 @@ export async function POST(request) {
 
   try {
     const { html, text } = purchaseEmail({ name: s.customer_details.name, sessionId: s.id });
-    await sendEmail({ to, subject: "Tu ebook «No soy tu madre» 💗", html, text, idempotencyKey: `nstm-${s.id}` });
+    await sendEmail({ to, subject: "Tu ebook «No soy tu madre» ya está aquí", html, text, idempotencyKey: `nstm-${s.id}` });
   } catch (e) {
     console.error("webhook: email failed", e);
     // 500 => Stripe ponowi zdarzenie później (a Idempotency-Key nie pozwoli wysłać dwa razy).
